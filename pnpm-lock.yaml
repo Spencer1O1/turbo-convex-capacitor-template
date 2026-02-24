@@ -26,9 +26,9 @@ importers:
       '@capacitor/core':
         specifier: ^6.1.2
         version: 6.2.1
-      '@template/convex':
+      '@template/backend':
         specifier: workspace:*
-        version: link:../../convex
+        version: link:../../backend
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -64,7 +64,7 @@ importers:
         specifier: ^5.4.8
         version: 5.4.21(@types/node@20.19.25)(lightningcss@1.31.1)(terser@5.44.1)
 
-  convex:
+  backend:
     dependencies:
       convex:
         specifier: ^1.28.0

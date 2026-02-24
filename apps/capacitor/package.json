@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@capacitor/core": "^6.1.2",
-    "@template/convex": "workspace:*",
+    "@template/backend": "workspace:*",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

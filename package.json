@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "dev:capacitor": "pnpm --filter @template/capacitor dev",
-    "dev:convex": "pnpm --filter @template/convex dev",
+    "dev:backend": "pnpm --filter @template/backend dev",
     "lint": "turbo run lint",
     "format": "turbo run format",
     "typecheck": "turbo run typecheck",
