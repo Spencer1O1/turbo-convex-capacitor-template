@@ -1,9 +1,8 @@
-# Expo + Next + Convex Turborepo Template
+# React + Capacitor + Convex Turborepo Template
 
 ## Stack
 - pnpm + Turborepo
-- Expo (Expo Router) mobile app
-- Next.js web app
+- React + Capacitor mobile/web app
 - Convex backend
 - Biome formatter/linter
 - TypeScript everywhere
@@ -33,13 +32,28 @@
    pnpm dev
    ```
 
+## Capacitor Setup
+After installing dependencies, to add mobile platforms:
+```bash
+cd apps/capacitor
+pnpm cap:add:android
+pnpm cap:add:ios
+```
+
+To sync and open in Android Studio or Xcode:
+```bash
+pnpm cap:sync
+pnpm cap:open:android
+pnpm cap:open:ios
+```
+
 ## Rename the template
-Update the package scope and Expo app name in one command (works on Windows/macOS/Linux):
+Update the package scope and Capacitor app name in one command (works on Windows/macOS/Linux):
 ```bash
 pnpm rename myscope "My App Name"
 pnpm install # refresh lockfile after renaming
 ```
-This replaces all `@template/*` packages with `@myscope/*` and updates `apps/expo/app.json` name/slug/scheme.
+This replaces all `@template/*` packages with `@myscope/*` and updates `apps/capacitor/capacitor.config.ts` appId/appName.
 
 ## Convex note
 The Convex backend ships with stubbed generated files so typecheck passes out of the box. When you’re ready to use Convex, run:
@@ -49,7 +63,6 @@ pnpm --filter @template/convex convex codegen
 then start the Convex dev server with `pnpm dev:convex`.
 
 ## Useful scripts
-- `pnpm dev:expo`
-- `pnpm dev:web`
+- `pnpm dev:capacitor`
 - `pnpm dev:convex`
 - `pnpm lint` | `pnpm format` | `pnpm typecheck` | `pnpm build` | `pnpm test`

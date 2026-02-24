@@ -5,11 +5,12 @@
  * Usage:
  *   pnpm rename <scope> "My App Name"
  *
- * - Replaces all "@template/" with "@<scope>/" across the repo.
- * - Replaces "monorepo-template" with "<scope>".
  * - Replaces Expo display/slug/scheme defaults:
  *     "Template Expo App" / "template-expo-app" / "template-app"
  *     => provided app name + slug.
+ * - Replaces Capacitor appName/appId defaults:
+ *     "Capacitor App" / "com.example.app"
+ *     => provided app name + com.<scope>.<slug>
  *
  * Ignores node_modules, .git, build outputs, and lockfiles already handled.
  */
@@ -19,7 +20,7 @@ const path = require("node:path");
 const rawScope = process.argv[2];
 const displayName = process.argv[3] || "My App";
 if (!rawScope) {
-  console.error("Usage: pnpm rename <scope> [Expo App Name]");
+  console.error("Usage: pnpm rename <scope> [App Name]");
   process.exit(1);
 }
 const scope = rawScope.replace(/^@/, "");
@@ -70,7 +71,9 @@ function replaceInFile(filePath) {
     .replace(/monorepo-template/g, `${scope}`)
     .replace(/Template Expo App/g, displayName)
     .replace(/template-expo-app/g, slug)
-    .replace(/template-app/g, slug);
+    .replace(/template-app/g, slug)
+    .replace(/Capacitor App/g, displayName)
+    .replace(/com\.example\.app/g, `com.${scope}.${slug}`);
 
   if (replaced !== content) {
     fs.writeFileSync(filePath, replaced);

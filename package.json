@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "turbo run dev --parallel",
-    "dev:expo": "pnpm --filter @template/expo dev",
-    "dev:web": "pnpm --filter @template/web dev",
+    "dev:capacitor": "pnpm --filter @template/capacitor dev",
     "dev:convex": "pnpm --filter @template/convex dev",
     "lint": "turbo run lint",
     "format": "turbo run format",
