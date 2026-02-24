@@ -35,16 +35,16 @@
 ## Capacitor Setup
 After installing dependencies, to add mobile platforms:
 ```bash
-cd apps/capacitor
-pnpm cap:add:android
-pnpm cap:add:ios
+pnpm --filter @solvix/capacitor cap:add:android
+pnpm --filter @solvix/capacitor cap:add:ios
 ```
 
-To sync and open in Android Studio or Xcode:
+To build, sync and open in Android Studio or Xcode:
 ```bash
+pnpm build
 pnpm cap:sync
-pnpm cap:open:android
-pnpm cap:open:ios
+pnpm dev:android
+pnpm dev:ios
 ```
 
 ## Rename the template
@@ -64,5 +64,8 @@ then start the Convex dev server with `pnpm dev:convex`.
 
 ## Useful scripts
 - `pnpm dev:capacitor`
-- `pnpm dev:convex`
+- `pnpm dev:backend`
+- `pnpm dev:android`
+- `pnpm dev:ios`
+- `pnpm cap:sync`
 - `pnpm lint` | `pnpm format` | `pnpm typecheck` | `pnpm build` | `pnpm test`

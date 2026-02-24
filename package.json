@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "dev:capacitor": "pnpm --filter @template/capacitor dev",
+    "dev:android": "pnpm --filter @solvix/capacitor cap:open:android",
+    "dev:ios": "pnpm --filter @solvix/capacitor cap:open:ios",
     "dev:backend": "pnpm --filter @template/backend dev",
+    "cap:sync": "pnpm --filter @solvix/capacitor cap:sync",
     "lint": "turbo run lint",
     "format": "turbo run format",
     "typecheck": "turbo run typecheck",
